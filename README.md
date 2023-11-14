@@ -1,0 +1,1 @@
+used this guy's github for some help on hooking up the CLI with the queries https://github.com/jpd61/employee-tracker/tree/master
