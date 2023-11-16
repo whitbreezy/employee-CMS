@@ -3,13 +3,6 @@ const mysql = require('mysql2');
 const inquirer = require('inquirer');
 const consoleTable = require('console.table');
 
-const CLI = require('./lib/cli.js');
-
-const app = express();
-
-// Express middleware
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
 
 // Connect to database
 const db = mysql.createConnection(
@@ -53,7 +46,7 @@ const run = () => {
             })
 };
 
-let viewDepartments = () => {
+const viewDepartments = () => {
     const sql = `SELECT departments.id AS id, departments.name AS department from departments`;
 
     db.query(sql, (err, result) => {
@@ -147,7 +140,7 @@ const addRole = () => {
             });
         })
 };
-addEmployee = () => {
+const addEmployee = () => {
     inquirer
         .prompt([
             {
